@@ -16,16 +16,17 @@ namespace devops_net6_envconfig.Controllers
         }
 
          [HttpGet]
-        public async Task<string> GetConfiguration()
+        public async Task<string> GetConfigurationAppSettings()
         {
             var config = _configuration["SqlConnectionString"];
             return await Task.Run(() => config);
         }
 
-        [HttpGet("test")]
-        public string GetTest()
+        [HttpGet("secret")]
+        public async Task<string> GetSecret()
         {
-            return "this is for testing the app";
+            var config = _configuration["DBSecret"];
+            return await Task.Run(() => config);
         }
 
     }
