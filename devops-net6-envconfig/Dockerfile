@@ -3,4 +3,4 @@ WORKDIR /app
 RUN dir
 COPY  . .
 EXPOSE 80
-ENTRYPOINT ["dotnet", "sqlapp.dll"]
+ENTRYPOINT ["dotnet", "devops-net6-envconfig.dll"]
