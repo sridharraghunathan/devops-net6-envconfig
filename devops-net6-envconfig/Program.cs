@@ -8,10 +8,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //For getting the Current Environment
+/*
 var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
 var environment = config.GetSection("EnvironmentName").Value;
 builder.Configuration.AddJsonFile("appsettings.json").AddJsonFile($"appsettings.{environment}.json");
-
+*/
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
