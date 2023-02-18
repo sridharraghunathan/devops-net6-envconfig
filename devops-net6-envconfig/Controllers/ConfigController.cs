@@ -21,5 +21,12 @@ namespace devops_net6_envconfig.Controllers
             var config = _configuration["SqlConnectionString"];
             return await Task.Run(() => config);
         }
+
+        [HttpGet("test")]
+        public string GetTest()
+        {
+            return "this is for testing the app";
+        }
+
     }
 }
