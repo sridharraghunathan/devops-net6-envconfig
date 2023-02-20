@@ -19,6 +19,6 @@ spec:
           name: myapp
         env:
         - name: ASPNETCORE_ENVIRONMENT
-          value: #{environment}
+          value: #{environment}#
         - name : DBSecret
-          value : #{secret}
+          value : #{secret}#
