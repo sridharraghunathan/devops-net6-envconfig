@@ -33,7 +33,6 @@ stages:
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
-        buildContext: '$(Build.ArtifactStagingDirectory)/devops-net6-envconfig'
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
