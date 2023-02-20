@@ -19,6 +19,6 @@ spec:
           name: myapp
         env:
         - name: ASPNETCORE_ENVIRONMENT
-          value: "sit"
+          value: #{environment}
         - name : DBSecret
-          value : "secret coming from the compose file"
+          value : #{secret}
