@@ -1,5 +1,12 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS buildProject
+WORKDIR /build
+COPY *.csproj ./
+RUN dotnet restore
+COPY . .
+RUN dotnet publish -c Release -o out
+
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY  . .
+COPY  --from=buildProject /build/out .
 EXPOSE 80
 ENTRYPOINT ["dotnet", "devops-net6-envconfig.dll"]

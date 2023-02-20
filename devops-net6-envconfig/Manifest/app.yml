@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - image: devopscontainerhub.azurecr.io/devops-net6-envconfig:latest
+        name: myapp
+        ports:
+        - containerPort: 80
+          name: myapp
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "sit"
+        - name : DBSecret
+          value : "secret coming from the compose file"
